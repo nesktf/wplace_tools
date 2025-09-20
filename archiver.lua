@@ -1,11 +1,11 @@
-local conf = {["row-init"] = 648, ["row-end"] = 654, ["col-init"] = 1167, ["col-end"] = 1173}
+local conf = {["row-init"] = 647, ["row-end"] = 655, ["col-init"] = 1166, ["col-end"] = 1174}
 local function make_dir(dirname)
   os.execute(("mkdir -p ./" .. dirname))
   return dirname
 end
 local function make_cmd(dir, row, col, count)
   local url = string.format("https://backend.wplace.live/files/s0/tiles/%d/%d.png", row, col)
-  return string.format("wget \"%s\" -O ./%s/%d_%d_%d", url, dir, count, row, col)
+  return string.format("wget \"%s\" -O ./%s/%d_%d_%d.png", url, dir, count, row, col)
 end
 local function populate_cmds(dir, grid)
   local count = 0

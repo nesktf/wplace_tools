@@ -1,4 +1,4 @@
-(local conf {:row-init 648 :row-end 654 :col-init 1167 :col-end 1173})
+(local conf {:row-init 647 :row-end 655 :col-init 1166 :col-end 1174})
 
 (fn make-dir [dirname]
   (os.execute (.. "mkdir -p ./" dirname))
@@ -7,7 +7,7 @@
 (fn make-cmd [dir row col count]
   (let [url (string.format "https://backend.wplace.live/files/s0/tiles/%d/%d.png"
                            row col)]
-    (string.format "wget \"%s\" -O ./%s/%d_%d_%d" url dir count row col)))
+    (string.format "wget \"%s\" -O ./%s/%d_%d_%d.png" url dir count row col)))
 
 (fn populate-cmds [dir grid]
   (var count 0)
